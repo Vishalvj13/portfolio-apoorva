@@ -17,15 +17,18 @@
   .portrait-area { justify-self: start; }
 }
 
-/* Real portrait in the existing circular frame. */
-.portrait-frame { width:100%; aspect-ratio:1; border:3px solid color-mix(in srgb,var(--purple) 35%,var(--border)); border-radius:50%; overflow:hidden; background:var(--inner); box-shadow:0 15px 50px #7058c418; }
-.portrait-photo { display:block; width:100%; height:100%; object-fit:cover; object-position:50% 30%; }
-
-/* Show the entire supplied photograph, without a circular crop. */
-.portrait-frame { aspect-ratio:auto; border-radius:18px; }
-.portrait-photo { width:100%; height:auto; object-fit:contain; object-position:center; }
-.portrait-caption { position:static; width:fit-content; margin:14px 0 0 auto; }
-
-/* Circular portrait with the new photograph. */
-.portrait-frame { aspect-ratio:1; border-radius:50%; }
-.portrait-photo { width:100%; height:100%; object-fit:cover; object-position:center; }
+/* A fixed-ratio circle independent of the photograph's intrinsic size. */
+.portrait-frame {
+  position:relative;
+  width:100%;
+  height:0;
+  padding-bottom:calc(100% - 6px);
+  border:3px solid color-mix(in srgb,var(--purple) 35%,var(--border));
+  border-radius:50%;
+  overflow:hidden;
+  background:var(--inner);
+  box-shadow:0 15px 50px #7058c418;
+}
+.portrait-photo { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+.portrait-caption { position:absolute; right:-10px; bottom:0; margin:0; width:auto; z-index:1; }
+@media(max-width:560px) { .portrait-caption { right:-4px; } }
