@@ -4,8 +4,8 @@ A standalone, responsive HTML/CSS/JavaScript portfolio inspired by Vishal's port
 
 ## Editing
 - `dist/index.html`: page content and placeholders.
-- `dist/styles.css`: light-only theme, responsive cards and layout.
-- `dist/app.js`: project detail copy, filters, tabs and dialogs.
+- `dist/styles.css`: light/dark themes, responsive cards and layout.
+- `dist/app.js`: project detail copy, theme switching, filters, tabs and dialogs.
 
 ## Add before public release
 - Approved portrait and resume PDF.
@@ -26,5 +26,3 @@ Dashed boxes visibly mark missing content. The resume buttons open a placeholder
 Black & Veatch's exact role and dates were not publicly accessible. Education periods are from LinkedIn; exact qualifications remain placeholders. ANERG and COEP records corroborate academic links but do not establish an exact degree. Project topics are listed publicly; methods and results have not been invented. No contact information from third-party documents has been copied.
 
 No build step or external JavaScript dependencies. Serve `dist/` with a static web server.
-
-The homepage uses an original illustrative structural-frame drawing, not an actual project deliverable. Portrait remains a placeholder. The site is light-only.
