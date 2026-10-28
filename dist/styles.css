@@ -5,3 +5,14 @@
 @media(max-width:800px){.nav-links{display:none;position:absolute;top:70px;left:24px;right:24px;background:var(--surface);padding:15px;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);flex-direction:column}.nav-links.open{display:flex}.nav-links a{font-size:1rem}.menu-toggle{display:grid;margin-left:auto}.nav-actions{gap:7px}.hero{grid-template-columns:1fr;min-height:auto;padding-top:130px;gap:48px;padding-bottom:80px}.portrait-area{justify-self:center;max-width:300px}.hero-copy{max-width:600px}.hero-footnote{margin-bottom:0}.scroll-link{left:0;bottom:20px}.about-layout,.contact-grid{grid-template-columns:1fr;gap:28px}.draft-note{flex-wrap:wrap;padding-inline:0}.draft-note button{margin-left:40px}.section-card{padding:30px}.project-art{height:170px}}
 @media(max-width:560px){.wrap{width:calc(100% - 28px)}.nav{gap:10px}.nav-actions .small{padding:10px 12px}.hero{padding-top:125px}.hero h1{font-size:2.8rem}.role{font-size:.95rem}.hero-description{font-size:1rem}.actions{gap:10px}.actions .button{font-size:.82rem;padding:13px 16px}.section-card{padding:26px 20px;border-radius:20px;margin-top:32px}.section-heading{margin-bottom:24px}.project-grid,.two-grid{grid-template-columns:1fr}.project-toolbar{align-items:start;flex-direction:column;gap:10px}.experience-row{padding-left:0;padding-top:70px}.experience-row:before{display:none}.company-mark{top:0}.experience-card{padding:20px}.recognition{gap:15px}.portrait-caption{right:-4px}.footer{padding:25px 22px;gap:20px}.footer>div{width:100%}.case-grid{grid-template-columns:1fr;gap:0}dialog{padding:30px 22px}.draft-note button{margin-left:0}.nav-links{left:14px;right:14px}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}.cursor{animation:none}}
+
+/* Bring the homepage portrait closer to the introduction. */
+@media (min-width: 801px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 28px;
+    max-width: 1060px;
+    margin-inline: auto;
+  }
+  .portrait-area { justify-self: start; }
+}
