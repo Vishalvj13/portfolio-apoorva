@@ -1,15 +1,4 @@
-const root = document.documentElement;
-const themeButton = document.querySelector('.theme-toggle');
-let savedTheme;
-try { savedTheme = localStorage.getItem('apoorva-theme'); } catch {}
-function setTheme(theme) {
-  root.dataset.theme = theme;
-  themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-  themeButton.firstElementChild.textContent = theme === 'dark' ? '☼' : '☾';
-  try { localStorage.setItem('apoorva-theme', theme); } catch {}
-}
-setTheme(savedTheme === 'dark' ? 'dark' : 'light');
-themeButton.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+document.documentElement.dataset.theme = 'light';
 const menu = document.querySelector('.menu-toggle');
 const nav = document.getElementById('nav-links');
 function closeMenu() { nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Open menu'); }
@@ -47,6 +36,3 @@ document.querySelectorAll('.resume-trigger').forEach(b=>b.addEventListener('clic
 document.querySelectorAll('dialog').forEach(dialog=>{dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});});
 document.getElementById('placeholder-toggle').addEventListener('click',e=>{const active=document.body.classList.toggle('highlight-placeholders');e.currentTarget.setAttribute('aria-pressed',String(active));e.currentTarget.textContent=active?'Stop highlighting':'Highlight placeholders';});
 document.getElementById('year').textContent=new Date().getFullYear();
-const typewriter=document.getElementById('typewriter');
-const words=['environmental research','air quality','sustainable materials'];
-if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let word=0,index=words[0].length,deleting=true;function type(){const value=words[word];index+=deleting?-1:1;typewriter.textContent=value.slice(0,index);let delay=deleting?40:70;if(index===0){deleting=false;word=(word+1)%words.length;delay=300;}else if(index===value.length&&!deleting){deleting=true;delay=1800;}setTimeout(type,delay);}setTimeout(type,2200);}
